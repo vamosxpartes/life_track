@@ -3,4 +3,4 @@
 A new Flutter project for personal development.
 Internamente 'life_track'
 
-Una aplicación para desarrollo personal.
+Una aplicación para desarrollo personal y seguimiento de relaciones personales, finanzas.

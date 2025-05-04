@@ -21,6 +21,7 @@ class AppColors {
   static const Color habitsPrimary = Color(0xFF64E9A6);   // Verde menta
   static const Color relationsPrimary = Color(0xFFE964A6); // Rosa
   static const Color financesPrimary = Color(0xFF64A6E9);  // Azul
+  static const Color analyticsPrimary = Color(0xFFA664E9); // Púrpura
   
   // Colores comunes
   static const Color success = Color(0xFF64E9A6);
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => HabitProvider()),
         ChangeNotifierProvider(create: (_) => ContactProvider()),
         ChangeNotifierProvider(create: (_) => FinancesProvider()),
+        ChangeNotifierProvider(create: (_) => AnalyticsProvider()),
       ],
       child: MaterialApp(
         title: 'LifeTrack',

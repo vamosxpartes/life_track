@@ -7,4 +7,5 @@ export 'financial_account.dart';
 export 'transaction.dart';
 export 'saving_goal.dart';
 export 'loan.dart';
-export 'recurring_expense.dart'; 
+export 'recurring_expense.dart';
+export 'analytics_metric.dart'; 

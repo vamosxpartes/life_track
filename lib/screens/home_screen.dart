@@ -3,6 +3,7 @@ import 'package:life_track/screens/diary/diary_screen.dart';
 import 'package:life_track/screens/habits/habits_screen.dart';
 import 'package:life_track/screens/contacts/contacts_screen.dart';
 import 'package:life_track/screens/finances/finances_screen.dart';
+import 'package:life_track/screens/analytics/dashboard_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:life_track/providers/providers.dart';
 
@@ -25,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const HabitsScreen(),
     const ContactsScreen(),
     const FinancesScreen(),
+    const DashboardScreen(),
   ];
 
   // Lista de colores para cada sección
@@ -33,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
     AppColors.habitsPrimary,
     AppColors.relationsPrimary,
     AppColors.financesPrimary,
+    AppColors.analyticsPrimary,
   ];
 
   @override
@@ -57,6 +60,8 @@ class _HomeScreenState extends State<HomeScreen> {
       await Provider.of<FinancesProvider>(context, listen: false).loadSavingGoals();
       // ignore: use_build_context_synchronously
       await Provider.of<FinancesProvider>(context, listen: false).loadRecurringExpenses();
+      // ignore: use_build_context_synchronously
+      await Provider.of<AnalyticsProvider>(context, listen: false).loadMetrics();
     });
   }
 
@@ -135,6 +140,11 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icon(Icons.account_balance_outlined, color: _currentIndex == 3 ? currentColor : Colors.grey),
               selectedIcon: Icon(Icons.account_balance, color: currentColor),
               label: 'Finanzas',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.dashboard_outlined, color: _currentIndex == 4 ? currentColor : Colors.grey),
+              selectedIcon: Icon(Icons.dashboard, color: currentColor),
+              label: 'Dashboard',
             ),
           ],
         ),
